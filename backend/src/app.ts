@@ -1,20 +1,24 @@
+// src/app.ts
 import express from 'express';
-import bodyParser from 'body-parser';
 import cors from 'cors';
 import dotenv from 'dotenv';
 
-// Initialize environment variables
+import routes from './routes';
+
 dotenv.config();
 
 const app = express();
 
 // Middleware
-app.use(bodyParser.json());
 app.use(cors());
+app.use(express.json());
 
 // Routes
+app.use('/api', routes);
+
+// Root endpoint
 app.get('/', (req, res) => {
-  res.send('CI/CD Pipeline Visualization Tool Backend');
+  res.send('CI/CD Pipeline Visualization Tool Backend with Supabase');
 });
 
 // Start the server
