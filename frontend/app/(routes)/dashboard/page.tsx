@@ -69,7 +69,8 @@ export default function page() {
           </select>
         </div>
       )}
-      {selectedPipeline && <PipelineVisualizer pipeline={selectedPipeline} />}
+      {/* {selectedPipeline && <PipelineVisualizer pipeline={selectedPipeline} />} */}
+      {selectedPipeline && <PipelineVisualizer />}
     </header>
   );
 }
